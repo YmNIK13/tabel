@@ -1,0 +1,16 @@
+bootstrap:
+  header: true
+  css:
+    theme:
+      assets/bootstrap/css/bootstrap.min.css: {}
+  js:
+    assets/bootstrap/js/bootstrap.min.js: {}
+  dependencies:
+    - core/jquery
+
+custom:
+  css:
+    theme:
+      assets/css/app.css: {}
+  js:
+    assets/js/app.js: {}
