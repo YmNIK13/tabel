@@ -1,0 +1,15 @@
+name: 'HRD'
+type: 'theme'
+description:  'Human Resources Department'
+core: '8.x'
+#base theme: 'bartik'
+
+libraries:
+  - hrd/bootstrap
+  - hrd/custom
+
+regions:
+  header: 'Header'
+  content: 'Content'
+  left_sidebar: 'Left sidebar'
+  footer: 'Footer'
