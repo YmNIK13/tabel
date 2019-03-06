@@ -3,3 +3,14 @@
 function hrd_preprocess_page(&$vars){
     $vars['my_name'] = 'Valeriy';
 }
+
+function hrd_theme(){
+    return [
+        'menu__main' => [
+            'variables' => [
+                'items' => null
+            ],
+            'template' => 'my-menu'
+        ]
+    ];
+}
