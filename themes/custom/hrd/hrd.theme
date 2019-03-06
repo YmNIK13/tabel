@@ -1,0 +1,5 @@
+<?php
+
+function hrd_preprocess_page(&$vars){
+    $vars['my_name'] = 'Valeriy';
+}

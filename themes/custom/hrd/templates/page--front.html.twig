@@ -1,19 +1,12 @@
-<div class="container">
-    <div class="row">
-        <div class="col-md-12 header">
-            {{ page.header }}
-        </div>
-    </div>
+{% extends "page.html.twig" %}
 
-    <div class="row">
-        <div class="col-md-12 content">
-            {{ page.content }}
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-md-12 footer">
-            {{ page.footer }}
-        </div>
-    </div>
-</div>
+        {% block content %}
+            {% if page.left_sidebar %}
+                <div class="col-md-6 left_sidebar">
+                    {{ page.left_sidebar }}
+                </div>
+            {% endif %}
+            <div class="col-md-{{ (page.left_sidebar ? '6' : '12') }} content">
+                {{ page.content }}
+            </div>
+        {% endblock %}

@@ -5,13 +5,35 @@
         </div>
     </div>
 
+    <style type="text/css">
+        .even{
+            background-color: #00a4e4;
+        }
+    </style>
+{#
+    <ul>
+        {% for letter in 'a'..'z' %}
+            <li class="{{ cycle(['add','even'], loop.index0) }}">{{ letter }}</li>
+        {% endfor %}
+    </ul>#}
+
+    <h1>Hello {{ my_name }}</h1>
+
+    <pre>
+        {{ dump(_context|keys) }}
+    </pre>
+
     <div class="row">
-        <div class="col-md-4 left_sidebar">
-            {{ page.left_sidebar }}
-        </div>
-        <div class="col-md-8 content">
-            {{ page.content }}
-        </div>
+        {% block content %}
+            {% if page.left_sidebar %}
+                <div class="col-md-4 left_sidebar">
+                    {{ page.left_sidebar }}
+                </div>
+            {% endif %}
+            <div class="col-md-{{ (page.left_sidebar ? '8' : '12') }} content">
+                {{ page.content }}
+            </div>
+        {% endblock %}
     </div>
 
     <div class="row">
