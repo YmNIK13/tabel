@@ -1,5 +1,5 @@
 <templateSet group="PHP">
-  <template name="pre1" value="//*/&#10;echo &quot;&lt;pre&gt;&quot;;&#10;print_r($NAME$);&#10;echo &quot;&lt;pre&gt;&quot;;&#10;//*/&#10;$END$" shortcut="ENTER" description="pre2" toReformat="false" toShortenFQNames="true">
+  <template name="pre1" value="//*/&#10;echo &quot;&lt;pre&gt;&quot;;&#10;print_r($NAME$);&#10;echo &quot;&lt;/pre&gt;&quot;;&#10;//*/&#10;$END$" shortcut="ENTER" description="pre2" toReformat="false" toShortenFQNames="true">
     <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
     <context>
       <option name="PHP" value="true" />
