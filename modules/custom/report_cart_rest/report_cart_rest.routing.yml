@@ -1,0 +1,13 @@
+report_cart_rest.get:
+  path: 'rc-rest/get.json'
+  defaults: { _controller: '\Drupal\report_cart_rest\Controller\ReportCartRestController::get_date_report_cart' }
+  methods:  [GET]
+  requirements:
+    _access: 'TRUE'
+
+report_cart_rest.post:
+  path: 'rc-rest/post.json'
+  defaults: { _controller: '\Drupal\report_cart_rest\Controller\ReportCartRestController::add_date_report_cart' }
+  methods:  [POST]
+  requirements:
+    _access: 'TRUE'

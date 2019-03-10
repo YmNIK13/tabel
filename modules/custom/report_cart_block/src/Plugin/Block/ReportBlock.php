@@ -19,8 +19,11 @@ namespace Drupal\report_cart_block\Plugin\Block;
 class ReportBlock extends \Drupal\Core\Block\BlockBase {
 
   private $_cur_month;
+
   private $_cur_year;
+
   private $_cur_max_days_month;
+
   private $_cur_number_day_first_week;
 
 

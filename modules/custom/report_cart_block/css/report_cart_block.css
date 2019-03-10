@@ -11,7 +11,7 @@
     color: white;
 }
 
-.report-cart-block .work {
+.report-cart-block td.work {
     background-color: green;
     color: white;
 }
