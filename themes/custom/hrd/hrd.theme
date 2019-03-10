@@ -1,16 +1,24 @@
 <?php
 
-function hrd_preprocess_page(&$vars){
-    $vars['my_name'] = 'Valeriy';
+function hrd_preprocess_page(&$vars) {
+
+  $vars['my_name'] = 'Valeriy';
+  $vars['my_text'] = theme_get_setting('my_text');
+  $vars['attributes']['class'][] = 'new';
+  $vars['attributes']['class'][] = 'new_2';
+  $vars['attributes']['class'][] = 'new_2__4';
+
+  $vars['my_slogan'] = \Drupal::config('system.site')->get('slogan');
 }
 
-function hrd_theme(){
-    return [
-        'menu__main' => [
-            'variables' => [
-                'items' => null
-            ],
-            'template' => 'my-menu'
-        ]
-    ];
+function hrd_theme() {
+  return [
+    'menu__main' => [
+      'variables' => [
+        'items' => NULL,
+      ],
+      'template' => 'my-menu',
+    ],
+  ];
 }
+

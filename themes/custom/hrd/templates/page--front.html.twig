@@ -1,12 +1,25 @@
 {% extends "page.html.twig" %}
-
         {% block content %}
-            {% if page.left_sidebar %}
-                <div class="col-md-6 left_sidebar">
-                    {{ page.left_sidebar }}
-                </div>
-            {% endif %}
-            <div class="col-md-{{ (page.left_sidebar ? '6' : '12') }} content">
-                {{ page.content }}
-            </div>
+            <style type="text/css">
+                .even {
+                    background-color: #00a4e4;
+                }
+            </style>
+            {#
+                <ul>
+                    {% for letter in 'a'..'z' %}
+                        <li class="{{ cycle(['add','even'], loop.index0) }}">{{ letter }}</li>
+                    {% endfor %}
+                </ul>#}
+
+            <h1>Hello {{ my_name }} and {{ my_text }}</h1>
+
+            <h1>{{ my_slogan }}</h1>
+            {#{{ dump(_context|keys) }}#}
+
+            {{ kint(attributes) }}
+
+            <h1{{ attributes.removeClass('new_2__4') }}>С атрибутами</h1>
+
+            {{ parent() }}
         {% endblock %}

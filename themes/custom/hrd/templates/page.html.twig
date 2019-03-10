@@ -5,24 +5,6 @@
         </div>
     </div>
 
-    <style type="text/css">
-        .even{
-            background-color: #00a4e4;
-        }
-    </style>
-{#
-    <ul>
-        {% for letter in 'a'..'z' %}
-            <li class="{{ cycle(['add','even'], loop.index0) }}">{{ letter }}</li>
-        {% endfor %}
-    </ul>#}
-
-    <h1>Hello {{ my_name }}</h1>
-
-
-        {#{{ kint(user) }}#}
-
-
     <div class="row">
         {% block content %}
             {% if page.left_sidebar %}
