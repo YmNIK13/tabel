@@ -1,0 +1,104 @@
+<?php
+
+/**
+ * @file
+ * Main file for custom hooks and function
+ */
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function dummy_form_user_login_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  $form['welcome'] = [
+    '#markup' => '<h2>Hello world</h2>',
+    '#weight' => -100,
+  ];
+
+  $form['name']['#attributes']['placeholder'] = 'Enter your username';
+
+}
+
+/**
+ * Implements hook_user_login().
+ */
+function dummy_user_login(\Drupal\user\UserInterface $account) {
+  $message = new \Drupal\Core\StringTranslation\TranslatableMarkup('Nice to see you  again, <strong>@username</strong>', [
+    '@username' => $account->getDisplayName(),
+  ]);
+
+  \Drupal::messenger()->addMessage($message);
+}
+
+
+/**
+ * Implements hook_user_format_name_alter().
+ */
+function dummy_user_format_name_alter(&$name, Drupal\Core\Session\AccountInterface $account) {
+  $name .= ' (' . $account->id() . ')';
+
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function dummy_preprocess_page(&$variables) {
+  $is_authenticated = \Drupal::currentUser()->isAuthenticated();
+
+  $messages = [
+    'Default messages',
+  ];
+
+  // hook_dummy_page_message().
+  $result = \Drupal::moduleHandler()->invokeAll('dummy_page_message');
+  $messages = \Drupal\Component\Utility\NestedArray::mergeDeep($messages, $result);
+
+  // hook_dummy_page_messages_alter().
+  // hook_dummy_page_message_USER_TYPE_alter().
+  \Drupal::moduleHandler()->alter([
+    'dummy_page_messages',
+    'dummy_page_messages_' . ($is_authenticated ? 'authenticated' : 'anonymous'),
+    ] , $messages);
+
+  if (!empty($messages)) {
+    foreach ($messages as $message) {
+      \Drupal::messenger()->addMessage($message);
+    }
+  }
+}
+
+/**
+ * Implements hook_dummy_page_message_alter().
+ */
+function dummy_dummy_page_message() {
+  return [
+    'Hello world',
+    'Hello world 2',
+  ];
+}
+
+/**
+ * Implements hook_dummy_page_messages_alter().
+ */
+function dummy_dummy_page_messages_alter(&$messages) {
+  $messages[2] = 'We replace "Hello world 2"';
+  $messages[] = 'And add new owner';
+}
+
+
+/**
+ * Implements hook_dummy_page_messages_alter().
+ */
+function dummy_dummy_page_messages_anonymous_alter(&$messages) {
+  $messages[] = 'Hello UFO';
+}
+
+
+/**
+ * Implements hook_dummy_page_messages_alter().
+ */
+function dummy_dummy_page_messages_authenticated_alter(&$messages) {
+  $cur_user = \Drupal::currentUser()->getDisplayName();
+
+  $messages[] = 'Hello ' . $cur_user;
+}
+
