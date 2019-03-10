@@ -18,13 +18,13 @@ namespace Drupal\report_cart_block\Plugin\Block;
  */
 class ReportBlock extends \Drupal\Core\Block\BlockBase {
 
-  private $_date;
-
   private $_cur_month;
-
   private $_cur_year;
+  private $_cur_max_days_month;
+  private $_cur_number_day_first_week;
 
-  private function init() {
+
+  private function initDate() {
     // hook_report_cart_block_set_date().
     $cur_date = \Drupal::moduleHandler()
       ->invokeAll('report_cart_block_set_date');
@@ -36,12 +36,12 @@ class ReportBlock extends \Drupal\Core\Block\BlockBase {
 
     $this->_cur_month = date('n', $cur_date);
     $this->_cur_year = date('Y', $cur_date);
+    $this->_cur_max_days_month = date('t', $cur_date);
 
     // указываем первый день месяца
     $date_first_day_mouth = new \DateTime();
     $date_first_day_mouth->setDate($this->_cur_year, $this->_cur_month, 1);
-
-    $this->_date = $date_first_day_mouth->getTimestamp();
+    $this->_cur_number_day_first_week = date('N', $date_first_day_mouth->getTimestamp());
   }
 
   private function getDatesThisMonth() {
@@ -73,21 +73,17 @@ class ReportBlock extends \Drupal\Core\Block\BlockBase {
   }
 
 
-  private function getNumberWeekDay() {
-    return (date('N', $this->_date));
-  }
-
   /**
    * {@inheritdoc}
    */
   public function build() {
-    $this->init();
+    $this->initDate();
 
     return [
       '#theme' => 'report_cart_block',
       '#work_days' => $this->getDatesThisMonth(),
-      '#week_day' => $this->getNumberWeekDay(),
-      '#this_day' => $this->_date,
+      '#week_day' => $this->_cur_number_day_first_week,
+      '#max_days_month' => $this->_cur_max_days_month,
     ];
   }
 }

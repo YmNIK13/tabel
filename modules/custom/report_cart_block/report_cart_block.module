@@ -10,7 +10,7 @@ function report_cart_block_theme($existing, $type, $theme, $path) {
       'variables' => [
         'work_days' => 'work_days',
         'week_day' => 'week_day',
-        'this_day' => 'this_day',
+        'max_days_month' => 'max_days_month',
       ],
     ],
   ];

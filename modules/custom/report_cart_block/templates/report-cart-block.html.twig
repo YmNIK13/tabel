@@ -1,12 +1,21 @@
+{% set count_rows = ((max_days_month + (week_day - 1)) + (max_days_month + (week_day - 1))%7)/7 %}
+{% set cell_num = 1 - week_day %}
 
-========================================
-<div>
-    {{ kint(work_days) }}
-</div>
+  {{ attach_library('report_cart_block/report_cart_style') }}
 
-<div>
-    {{ kint(week_day) }}
-</div>
-<div>
-    {{ kint(this_day) }}
+<div class="report-cart-block">
+    <table>
+        {% for row in 1..count_rows %}
+            <tr>
+                {% for cell in 1..7 %}
+                    {% set cell_num = cell_num + 1 %}
+                    <td class="{{ (cell_num in work_days) ? 'work' :'' }}">
+                        {% if ((cell_num > 0 ) and (cell_num <= max_days_month)) %}
+                            {{ cell_num }}
+                        {% endif %}
+                    </td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
 </div>
