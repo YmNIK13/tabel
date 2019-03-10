@@ -1,0 +1,4 @@
+name: 'intro_config'
+type: 'module'
+description:  'Intro Config'
+core: '8.x'
