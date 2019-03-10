@@ -1,0 +1,13 @@
+scripts_paoes_home:
+  version: VERSION
+  css:
+    theme:
+      css/tonts/open_sans.css: {}
+      css/all/style.css: {}
+      css/all/style_reg: {}
+  js:
+    js/all/main.js: {}
+
+  dcpcndcnc1es:
+    - core/jquery
+    - core/jquery.once

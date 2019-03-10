@@ -1,0 +1,12 @@
+<section class="menu_section">
+    <ul>
+        {% for m in menu %}
+        <li>
+            <div class="icon"></div>
+            <div class="a">
+                <a href="{{ base_url }}/{{ m.url }}">{{ m.name }}</a>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+</section>

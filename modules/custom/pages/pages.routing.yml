@@ -1,0 +1,7 @@
+pages.home:
+  path: '/home'
+  defaults:
+    _title: 'Главная страница'
+    _controller: '\Drupal\pages\Controller\Home\Home::get_data'
+  requirements:
+    _access: 'TRUE'

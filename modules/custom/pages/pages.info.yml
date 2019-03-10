@@ -1,0 +1,6 @@
+name: '_M pages'
+type: 'module'
+description: 'For M'
+package: "_ Package"
+author: "YmNIK13"
+core: '8.x'
