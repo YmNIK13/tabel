@@ -1,0 +1,20 @@
+<?php
+
+/**
+ * @file
+ * Main file for custom and function
+ */
+
+/**
+ * Implements hook_dummy_page_message().
+ */
+function yet_another_module_dummy_page_message() {
+  return 'message from yet another module';
+}
+
+/**
+ * Implements hook_dummy_page_messages_alter().
+ */
+function yet_another_module_dummy_page_messages_alter(&$messages) {
+  unset($messages[0]);
+}

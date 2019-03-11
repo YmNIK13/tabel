@@ -1,0 +1,14 @@
+<?php
+
+
+function pages_theme() {
+  return [
+    'home_the' => [
+      'variables' => [
+        'data' => 'data',
+        'base_url' => 'base_url',
+        'menu' => 'menu',
+      ],
+    ],
+  ];
+}

@@ -1,0 +1,5 @@
+name: 'Dummy'
+type: 'module'
+description:  'Hook example'
+version:  '1.0'
+core: '8.x'

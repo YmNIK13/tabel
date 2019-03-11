@@ -1,19 +1,25 @@
-<div class="container">
-    <div class="row">
-        <div class="col-md-12 header">
-            {{ page.header }}
-        </div>
-    </div>
+{% extends "page.html.twig" %}
+        {% block content %}
+            <style type="text/css">
+                .even {
+                    background-color: #00a4e4;
+                }
+            </style>
+            {#
+                <ul>
+                    {% for letter in 'a'..'z' %}
+                        <li class="{{ cycle(['add','even'], loop.index0) }}">{{ letter }}</li>
+                    {% endfor %}
+                </ul>#}
 
-    <div class="row">
-        <div class="col-md-12 content">
-            {{ page.content }}
-        </div>
-    </div>
+            <h1>Hello {{ my_name }} and {{ my_text }}</h1>
 
-    <div class="row">
-        <div class="col-md-12 footer">
-            {{ page.footer }}
-        </div>
-    </div>
-</div>
+            <h1>{{ my_slogan }}</h1>
+            {#{{ dump(_context|keys) }}#}
+
+            {{ kint(attributes) }}
+
+            <h1{{ attributes.removeClass('new_2__4') }}>С атрибутами</h1>
+
+            {{ parent() }}
+        {% endblock %}

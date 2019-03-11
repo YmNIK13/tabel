@@ -1,0 +1,8 @@
+name: 'Report cart REST'
+description: 'REST API Report Cart'
+type: 'module'
+core: '8.x'
+version: '1.0'
+dependencies:
+  - block
+  - node

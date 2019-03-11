@@ -1,0 +1,52 @@
+.head_section{
+
+    background-color: #0a6eb4;
+    color: white;
+}
+
+.head_section .title{
+    margin: 10px 50px;
+    font-size: 40px;
+    display: inline-block;
+}
+
+.logo{
+    max-height: 80px;
+}
+
+.w_1200{
+    width: auto;
+    display: inline-block;
+}
+
+
+
+.h_40{
+    height: 40px;
+}
+
+.window1{
+    border: 1px solid grey;
+    border-radius: 10px;
+    margin: 10px 0;
+    padding: 10px;
+}
+
+.window1_title{
+    font-size: 20px;
+}
+
+.menu_section ul  {
+    margin: 0;
+    padding: 4px;
+}
+.menu_section ul li,
+.menu_section ul li div {
+    display: inline;
+}
+
+.menu_section ul li div.a {
+    margin-right: 5px;
+    border: 1px solid #000;
+    padding: 3px;
+}

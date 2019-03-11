@@ -1,0 +1,17 @@
+.report-cart-block td {
+    text-align: center;
+    vertical-align: middle;
+    font-size: 20px;
+    padding: 5px;
+}
+
+.report-cart-block td:nth-child(6),
+.report-cart-block td:nth-child(7) {
+    background-color: #304134;
+    color: white;
+}
+
+.report-cart-block td.work {
+    background-color: green;
+    color: white;
+}

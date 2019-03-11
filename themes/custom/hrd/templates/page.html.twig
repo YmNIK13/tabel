@@ -6,12 +6,16 @@
     </div>
 
     <div class="row">
-        <div class="col-md-4 left_sidebar">
-            {{ page.left_sidebar }}
-        </div>
-        <div class="col-md-8 content">
-            {{ page.content }}
-        </div>
+        {% block content %}
+            {% if page.left_sidebar %}
+                <div class="col-md-4 left_sidebar">
+                    {{ page.left_sidebar }}
+                </div>
+            {% endif %}
+            <div class="col-md-{{ (page.left_sidebar ? '8' : '12') }} content">
+                {{ page.content }}
+            </div>
+        {% endblock %}
     </div>
 
     <div class="row">

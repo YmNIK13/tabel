@@ -2,7 +2,7 @@ name: 'HRD'
 type: 'theme'
 description:  'Human Resources Department'
 core: '8.x'
-#base theme: 'bartik'
+base theme: 'bartik'
 
 libraries:
   - hrd/bootstrap

@@ -1,0 +1,8 @@
+<?php
+
+function intro_config_install(){
+  \Drupal::service('config.factory')
+    ->getEditable('system.site')
+    ->set('slogan', 'Good job')
+    ->save();
+}

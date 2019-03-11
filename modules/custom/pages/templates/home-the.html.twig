@@ -1,0 +1,21 @@
+{{ attach_library ('pages/scripts_paoes_home') }}
+{% include '@pages/parts/head-theme.html.twig' %}
+
+
+<section class="content_menu_section">
+    {% include '@pages/parts/menu-thme.html.twig' %}
+
+
+    <section class="content_menu_section">
+        <div class="data">
+            {% for item_page in data.window %}
+                <div class="window1">
+                    <div class="window1_title">{{ item_page.title }}</div>
+                    <div class="window1_content">{{ item_page.content }}</div>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+
+</section>
+{% include '@pages/parts/footer-theme.html.twig' %}
