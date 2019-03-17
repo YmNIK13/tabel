@@ -1,7 +1,7 @@
 # Учебный проект на Drupal
 __Идея:__ Реализовать сайт табельного учета рабочих дней сотрудников.
 
-__Тестовый адрес:__ http://drupal.peremoga.pp.ua/otdely
+__Тестовый адрес:__ http://drupal.srv-t.pp.ua/otdely
 
 ## 1. Part 1 - "Drupal 8 - Beginner"
 
@@ -15,7 +15,7 @@ __Тестовый адрес:__ http://drupal.peremoga.pp.ua/otdely
   - Был на работе (обрабатывается плагином)
 ### 2. Создана таксономия **"Отдел"**
 ### 3. Локально cгенерировались данные модулем DEVEL
-### 4. Для таксономии  **"Отдел"** создано представление  ([Отделы](http://drupal.peremoga.pp.ua/otdely))
+### 4. Для таксономии  **"Отдел"** создано представление  ([Отделы](http://drupal.srv-t.pp.ua/otdely))
 ### 5. Созданы и привязаны две страницы:
   - Главная
   - About us
@@ -55,7 +55,7 @@ __Тестовый адрес:__ http://drupal.peremoga.pp.ua/otdely
 В модуле реализовано:
 ####   1.1. Получение всех дат связанных с данным сотрудником
   
-  __Запрос GET__:  http://tabel.loc:9011/rc-rest/get.json?nid=2
+  __Запрос GET__:  http://drupal.srv-t.pp.ua/rc-rest/get.json?nid=2
   
   где **nid** - id ноды сотрудника
   
@@ -84,7 +84,7 @@ __Тестовый адрес:__ http://drupal.peremoga.pp.ua/otdely
 
 ####   1.2 запрос POST - добавление рабочих дней связанных с данным сотрудником
   
-  __Запрос POST__:  http://tabel.loc:9011/rc-rest/post.json
+  __Запрос POST__:  http://drupal.srv-t.pp.ua/rc-rest/post.json
   
   В заголовке указываем: **Content-Type: application/json** 
   
@@ -136,7 +136,7 @@ __Тестовый адрес:__ http://drupal.peremoga.pp.ua/otdely
 ```
 
 ### 2. Проект развернут на тестовом хостинге по адресу
-http://drupal.peremoga.pp.ua/otdely
+http://drupal.srv-t.pp.ua/otdely
 
 ### 3. В процессе изучения Drupal было реализовано еще ряд плагинов по учебным пособиям
   1. **ITC** - плагин добавляет поле выпадающий список со страной
