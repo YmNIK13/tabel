@@ -2,6 +2,7 @@
   <component name="FileTypeManager" version="17">
     <extensionMap>
       <mapping ext="theme" type="PHP" />
+      <mapping pattern="cwebp" type="PLAIN_TEXT" />
       <mapping ext="_txt" type="PLAIN_TEXT" />
     </extensionMap>
   </component>
